@@ -4,16 +4,10 @@ class Solution(object):
         :type digits: List[int]
         :rtype: List[int]
         """
-        s=0
-        for i in digits:
-            s=s*10+i
-        s+=1
-        l=[]
-        if s == 0:
-            return [0]
-        while s:
-            a=s%10
-            l.append(a)
-            s=s//10
-        l.reverse()
-        return l
+        for i in range(len(digits) - 1, -1, -1):
+            if digits[i] < 9:
+                digits[i] += 1
+                return digits
+            digits[i] = 0
+
+        return [1] + digits
