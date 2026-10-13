@@ -5,12 +5,5 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
-        # s1= sorted(s)
-        # s2= sorted(t)
-
-        if len(s)!=len(t):
-            return False
-        for i in set(s):
-            if s.count(i)!=t.count(i):
-                return False
-        return True      
+        from collections import Counter
+        return Counter(s) == Counter(t)
