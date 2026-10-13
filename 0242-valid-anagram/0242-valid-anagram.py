@@ -8,7 +8,9 @@ class Solution(object):
         # s1= sorted(s)
         # s2= sorted(t)
 
-        if sorted(s)==sorted(t):
-            return True
-        else:
+        if len(s)!=len(t):
             return False
+        for i in set(s):
+            if s.count(i)!=t.count(i):
+                return False
+        return True      
