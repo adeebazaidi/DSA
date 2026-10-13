@@ -5,5 +5,12 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
-        from collections import Counter
-        return Counter(s) == Counter(t)
+        if len(s)!=len(t):
+            return False
+        bucket=[0]*26
+        for i in s:
+            bucket[ord(i)-97]+=1
+        for i in t:
+            bucket[ord(i)-97]-=1
+        
+        return all(x==0 for x in bucket)
