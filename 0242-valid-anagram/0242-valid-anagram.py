@@ -5,10 +5,10 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
-        s1= sorted(s)
-        s2= sorted(t)
+        # s1= sorted(s)
+        # s2= sorted(t)
 
-        if s1==s2:
+        if sorted(s)==sorted(t):
             return True
         else:
             return False
