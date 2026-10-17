@@ -4,10 +4,16 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        counts = {}
+        candidate = None
+        count = 0
 
         for num in nums:
-            counts[num] = counts.get(num, 0) + 1
+            if count == 0:
+                candidate = num
 
-            if counts[num] > len(nums) // 2:
-                return num
+            if num == candidate:
+                count += 1
+            else:
+                count -= 1
+
+        return candidate
