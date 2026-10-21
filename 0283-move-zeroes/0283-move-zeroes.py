@@ -4,13 +4,13 @@ class Solution(object):
         :type nums: List[int]
         :rtype: None Do not return anything, modify nums in-place instead.
         """
-        insert_pos = 0
+        w = 0
 
-        for num in nums:
-            if num != 0:
-                nums[insert_pos] = num
-                insert_pos += 1
+        for i in range(len(nums)):
+            if nums[i] != 0:
+                nums[w] = nums[i]
+                w += 1
 
-        while insert_pos < len(nums):
-            nums[insert_pos] = 0
-            insert_pos += 1
+        while w < len(nums):
+            nums[w] = 0
+            w += 1
