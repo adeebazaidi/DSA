@@ -9,7 +9,8 @@ class Solution(object):
         for s in strs[1:]:
             while not s.startswith(prefix):
                 prefix = prefix[:-1]
-                if prefix == "":
+
+                if not prefix:
                     return ""
 
         return prefix
